@@ -1,1 +1,11 @@
 <h1>Hello World</h1>
+
+{% if user_input %}
+<p>You entered: {{ user_input.text_input }}</p>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
