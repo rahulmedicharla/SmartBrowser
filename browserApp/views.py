@@ -1,15 +1,29 @@
-from django.shortcuts import render, redirect
-from .forms import TempInputForm
-from .models import Temp
+from django.shortcuts import render
+from .models import SearchMode
 
 def browserApp(request):
-    if request.method == 'POST':
-        form = TempInputForm(request.POST)
-        if form.is_valid():
-            user_input = form.save()
-            redirect('browserApp')
-    else:
-        form = TempInputForm()
-    user_input = Temp.objects.last()
-    context = {'form': form, 'user_input': user_input}
+    renderSearchModeObj = SearchMode.objects.first()
+    
+    context = {'search_mode': renderSearchModeObj.search_mode}
+    return render(request, 'browserApp.html', context)
+
+def updateSearchModeToAcademia(request):
+    obj = SearchMode.objects.first()
+    obj.search_mode = "Academia"
+    obj.save()
+    context = {'search_mode': obj.search_mode}
+    return render(request, 'browserApp.html', context)
+
+def updateSearchModeToDevelopment(request):
+    obj = SearchMode.objects.first()
+    obj.search_mode = "Development"
+    obj.save()
+    context = {'search_mode': obj.search_mode}
+    return render(request, 'browserApp.html', context)
+
+def updateSearchModeToAssistant(request):
+    obj = SearchMode.objects.first()
+    obj.search_mode = "Assistant"
+    obj.save()
+    context = {'search_mode': obj.search_mode}
     return render(request, 'browserApp.html', context)

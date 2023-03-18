@@ -1,69 +1,131 @@
 body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-  }
-  
-  header {
-    background-color: #a7d6f2;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  .logo {
+	background-color: #191919;
+	color: #f0f0f0;
+	font-family: sans-serif;
+    overflow-y: scroll;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
+}
+
+header img {
+	width: 150px;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+#buttonGroup {
+	width: 100%;
     display: flex;
     align-items: center;
-  }
-  
-  .logo img {
-    width: 50px;
-    margin-right: 10px;
-  }
-  
-  .logo h1 {
-    font-size: 24px;
+	justify-content: center;
+    margin-right: auto;
+}
+
+#buttonGroup button {
+    border: none;
     margin: 0;
-  }
-  
-  main {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .search-box {
-    display: inline-block;
-    background-color: #d3eaf7;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    margin-bottom: 30px;
-  }
-  
-  input[type="text"] {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    width: 90%;
-    margin-right: 10px;
-  }
-  
-  button[type="submit"] {
-    background-color: #0074D9;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    padding: 0;
+    background-color: transparent;
     cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #005CA9;
-  }
-  
-  .output-box {
-    display: inline-block;
-    background-color: #c6d7e6;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-  }
-  
+}
+
+.searchModeButton {
+    width: 55px;
+    height: 56px;
+    margin-right: 10px;
+	border-radius: 10px;
+}
+
+
+#searchBox {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+form {
+	display: flex;
+	align-items: center;
+}
+
+input[type="text"] {
+	width: 80%;
+	padding: 10px;
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	background-color: #f0f0f0;
+	margin-right: 10px;
+}
+
+button[type="submit"] {
+	padding: 10px 20px;
+	background-color: #ff7f50;
+	color: #f0f0f0;
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+    position: relative;
+    top: 10px;
+}
+
+#mainContent {
+	display: inline-flex;
+	padding: 20px;
+    width: 97%;
+}
+
+#output {
+    width: 72%;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+    margin-right: 3%;
+}
+
+#output h2 {
+	margin-bottom: 20px;
+}
+
+.result {
+	margin-bottom: 30px;
+}
+
+.result a {
+	color: #ff7f50;
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.result p {
+	margin-top: 10px;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+#relatedLinks {
+	width: 25%;
+	padding-left: 20px;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+}
+
+#relatedLinks h2 {
+	margin-bottom: 20px;
+}
+
+#relatedLinks ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#relatedLinks li {
+	margin-bottom: 10px;
+}
