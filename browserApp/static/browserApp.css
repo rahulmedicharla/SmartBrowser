@@ -48,6 +48,15 @@ header img {
 	padding: 20px;
 }
 
+.recordButtonClass{
+	width: 35px;
+    height: 35px;
+}
+
+#recordButtonWrapper{
+	border-radius: 10px;
+}
+
 form {
 	display: flex;
 	align-items: center;

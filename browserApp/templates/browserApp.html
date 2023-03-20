@@ -23,9 +23,10 @@
 	
 
 	<section id="searchBox">
-		<form method="post">
+		<form method="post" id="searchForm">
             {% csrf_token %}
 			<input type="text">
+			<button id="recordButtonWrapper"><img src="../static/microphoneOff.png" id = "recordButton" class="recordButtonClass"></button>
 			<button type="submit">Search</button>
 		</form>
 	</section>
@@ -53,4 +54,6 @@
 		</div>
 	</section>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="../static/browserApp.js"></script>
 </html>
