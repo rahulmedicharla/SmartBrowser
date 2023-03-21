@@ -4,8 +4,9 @@ from django.core.files.base import ContentFile
 from django.conf import settings
 import os
 from .models import SearchMode
-import subprocess, json, base64
 from .keys import openaikey
+import base64
+import openai
 
 
 def browserApp(request):
@@ -42,7 +43,18 @@ def recordAudio(request):
     path = default_storage.save('audioFile.wav', ContentFile(audio_file.read()))
     tmp_file = os.path.join(settings.MEDIA_ROOT, path)
 
+    openai.api_key = openaikey
     
+    file = open(tmp_file, 'rb')
+    transcription = openai.Audio.translate("whisper-1", file)
 
+    print(transcription["text"])
+
+    file.close()
+    default_storage.delete(tmp_file)
+    
     return render(request, 'browserApp.html')
+
+def updateInputMode():
+    return
     
