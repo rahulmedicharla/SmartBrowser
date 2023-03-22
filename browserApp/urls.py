@@ -6,6 +6,7 @@ urlpatterns = [
     path('updateSearchModeToAcademia/', views.updateSearchModeToAcademia, name = "updateSearchModeToAcademia"),
     path('updateSearchModeToDevelopment/', views.updateSearchModeToDevelopment, name = "updateSearchModeToDevelopment"),
     path('updateSearchModeToAssistant/', views.updateSearchModeToAssistant, name = "updateSearchModeToAssistant"),
-    path('recordAudio/', views.recordAudio, name = "recordAudio")
+    path('recordAudio/', views.recordAudio, name = "recordAudio"),
+    path('textRequest/', views.textRequest, name = "textRequest")
 ]
     

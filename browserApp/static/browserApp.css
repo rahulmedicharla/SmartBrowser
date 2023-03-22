@@ -18,6 +18,14 @@ header img {
 	margin-bottom: 10px;
 }
 
+a:link{
+	color: tan;
+}
+
+a:link{
+	color: tan;
+}
+
 #buttonGroup {
 	width: 100%;
     display: flex;
@@ -43,9 +51,9 @@ header img {
 
 
 #searchBox {
-	display: flex;
-	justify-content: center;
-	padding: 20px;
+	position: relative;
+	bottom: 10px;
+	margin-left: 15px
 }
 
 .recordButtonClass{
@@ -81,7 +89,7 @@ button[type="submit"] {
 	border-radius: 5px;
 	cursor: pointer;
     position: relative;
-    top: 10px;
+	margin-left: 15px;
 }
 
 #mainContent {

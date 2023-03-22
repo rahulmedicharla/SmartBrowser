@@ -65,8 +65,8 @@ navigator.mediaDevices.getUserMedia({audio: true})
               xhr.setRequestHeader("X-CSRFToken", csrfToken)
           },
           success: function(data) {
-            console.log("Audio uploaded successfully");
-          }
+            window.location.reload()
+          },
         });
 
         chunks = []

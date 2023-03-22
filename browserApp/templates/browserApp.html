@@ -23,9 +23,9 @@
 	
 
 	<section id="searchBox">
-		<form method="post" id="searchForm">
+		<form method="post" action="{% url 'textRequest' %}" id="searchForm">
             {% csrf_token %}
-			<input type="text">
+			<input type="text" name="inputRequest" value="{{ input_question }}">
 			<button id="recordButtonWrapper"><img src="../static/microphoneOff.png" id = "recordButton" class="recordButtonClass"></button>
 			<button type="submit">Search</button>
 		</form>
@@ -34,11 +34,7 @@
 	<section id="mainContent">
 		<div id="output">
 			<h2>Search Results</h2>
-            
-			<div class="result">
-				<a href="#">Result Title</a>
-				<p>Description of the result goes here...</p>
-			</div>
+			{{result |safe}}
 			
 			<!-- more results go here -->
 		</div>
@@ -46,9 +42,9 @@
 		<div id="relatedLinks">
 			<h2>Related Links</h2>
 			<ul>
-				<li><a href="#">Related Link 1</a></li>
-				<li><a href="#">Related Link 2</a></li>
-				<li><a href="#">Related Link 3</a></li>
+				<li>{{related_link_one | safe}}</li>
+				<li>{{related_link_two | safe}}</li>
+				<li>{{related_link_three | safe}}</a></li>
 				<!-- more related links go here -->
 			</ul>
 		</div>
