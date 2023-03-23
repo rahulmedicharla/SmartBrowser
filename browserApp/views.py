@@ -78,14 +78,8 @@ def textRequest(request):
     obj.input_question = request.POST.get('inputRequest')
     obj.save()
 
-    [text, urls] =  receiveAnswer("Question: " + obj.input_question, obj.search_mode)
-    print(urls)
-    links = urls.split(',')
+    text =  receiveAnswer("Question: " + obj.input_question, obj.search_mode)
     obj.result = text
-    obj.related_link_one = links[0]
-    obj.related_link_two = links[1]
-    obj.related_link_three = links[2]
-    obj.img_link = links[3]
     obj.save()
     
     context = {
@@ -127,13 +121,8 @@ def recordAudio(request):
     obj.save()
 
 
-    [text, urls] = receiveAnswer(obj.input_question, obj.search_mode)
-    links = urls.split(',')
+    text = receiveAnswer(obj.input_question, obj.search_mode)
     obj.result = text
-    obj.related_link_one = links[0]
-    obj.related_link_two = links[1]
-    obj.related_link_three = links[2]
-    obj.img_link = links[3]
     obj.save()
     
     context = {
@@ -171,21 +160,4 @@ def receiveAnswer(question, search_mode):
     )
 
     response = completion.choices[0].message.content
-
-    urls = getUrls(response)
-
-    return [response, urls]
-
-def getUrls(text):
-    openai.api_key = openaikey
-    
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages = [
-            {"role" : "system", "content" : URLS_CONTEXT},
-            {"role" : "user", "content": text}
-        ]
-    )
-
-    response = completion.choices[0].message.content
-    return response;
+    return response
