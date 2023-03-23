@@ -67,7 +67,7 @@ navigator.mediaDevices.getUserMedia({audio: true})
               xhr.setRequestHeader("X-CSRFToken", csrfToken)
           },
           success: function(data) {
-            window.location.reload()
+            window.location.href = '/'
           },
         });
 

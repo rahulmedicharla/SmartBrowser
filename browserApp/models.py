@@ -8,3 +8,4 @@ class BrowserContent(models.Model):
     related_link_one = models.TextField(default = "")
     related_link_two = models.TextField(default = "")
     related_link_three = models.TextField(default = "")
+    img_link = models.TextField(default="")

@@ -43,11 +43,12 @@
 		<div id="relatedLinks">
 			<h2>Related Links</h2>
 			<ul>
-				<li>{{related_link_one | safe}}</li>
-				<li>{{related_link_two | safe}}</li>
-				<li>{{related_link_three | safe}}</a></li>
+				<li><a href="{{related_link_one | safe}}" target = '_blank'>Link One</a></li>
+				<li><a href="{{related_link_two | safe}}" target = '_blank'>Link Two</a></li>
+				<li><a href="{{related_link_three | safe}}" target = '_blank'>Link Three</a></li>
 				<!-- more related links go here -->
 			</ul>
+			<img width="100%" alt="Related Img" src="{{img_link | safe}}">
 		</div>
 	</section>
 </body>
