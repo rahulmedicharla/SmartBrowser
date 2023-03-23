@@ -35,6 +35,8 @@ navigator.mediaDevices.getUserMedia({audio: true})
       var oggFile = new FormData();
       oggFile.append('audio', blob);
 
+      makeLoadingVisible()
+
 
       // Create an AudioContext instance
       const audioContext = new AudioContext();
@@ -134,5 +136,9 @@ navigator.mediaDevices.getUserMedia({audio: true})
     for (let i = 0; i < string.length; i++) {
       view.setUint8(offset + i, string.charCodeAt(i));
     }
+  }
+
+  function makeLoadingVisible(){
+    document.getElementById("loading_gif").removeAttribute('hidden')
   }
   

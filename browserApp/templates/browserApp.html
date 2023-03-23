@@ -25,9 +25,10 @@
 	<section id="searchBox">
 		<form method="post" action="{% url 'textRequest' %}" id="searchForm">
             {% csrf_token %}
+			<img src="../static/loading.gif" hidden width="45px" height="45px" id = "loading_gif">
 			<input type="text" name="inputRequest" value="{{ input_question }}">
 			<button id="recordButtonWrapper"><img src="../static/microphoneOff.png" id = "recordButton" class="recordButtonClass"></button>
-			<button type="submit">Search</button>
+			<button type="submit" onclick="makeLoadingVisible()">Search</button>
 		</form>
 	</section>
 
